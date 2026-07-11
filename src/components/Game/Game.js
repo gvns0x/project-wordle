@@ -14,11 +14,17 @@ console.info({ answer });
 
 function Game() {
   const [guessResults, setGuessResults] = React.useState([])
+  const [rightAnswer, setRightAnswer] = React.useState(answer)
+  console.info({rightAnswer})
   const gameEnded = answer === guessResults[guessResults.length - 1] || guessResults.length === 6
 
   function updateResults(input) {
     const results = [...guessResults]
     setGuessResults([...results, input])
+  }
+
+  function onRestart() {
+    setRightAnswer(sample(WORDS))
   }
   
   console.log(`Game ended: ${gameEnded}`)
