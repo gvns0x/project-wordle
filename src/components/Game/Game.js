@@ -19,8 +19,11 @@ function Game() {
   }
 
   return <>
-  <GuessResults guessResults={guessResults} answer={answer}/>
-  <Input updateResults={updateResults}/>
+    <GuessResults guessResults={guessResults} answer={answer} />
+    <Input updateResults={updateResults} />
+    {answer === guessResults[guessResults.length - 1]
+      || guessResults.length === 6 &&
+      <h1>YAY</h1>}
   </>;
 }
 
