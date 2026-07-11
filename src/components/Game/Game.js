@@ -24,10 +24,10 @@ function Game() {
   console.log(`Game ended: ${gameEnded}`)
 
   return <>
-    <GuessResults guessResults={guessResults} answer={answer} />
-    <Input updateResults={updateResults} />
+    <GuessResults {...{guessResults, answer}} />
+    <Input {...{updateResults, gameEnded}} />
     {gameEnded &&
-    <Banner guessResults={guessResults} answer={answer}/>}
+    <Banner {...{guessResults, answer}} />}
   </>;
 }
 
