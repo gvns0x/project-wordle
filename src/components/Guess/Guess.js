@@ -2,7 +2,7 @@ import React from 'react';
 
 function Guess( {guessResult} ) {
 
-  const numOfBlocks = Array.from({ length: 5 }, (_, index) => index + 1)
+  const numOfBlocks = Array.from({ length: 5 })
 
   return <p className="guess">
     {guessResult ?
