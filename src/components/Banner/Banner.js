@@ -1,12 +1,20 @@
 import React from 'react';
 
-function Banner() {
+function Banner({ guessResults, answer }) {
+  const gameWon = answer === guessResults[guessResults.length - 1] && guessResults.length <= 6
+
+
   return (
-    <div class="happy banner">
-      <p>
-        <strong>Congratulations!</strong> Got it in {" "}
-        <strong>3 guesses</strong>.
-      </p>
+    <div className={`banner ${gameWon ? "happy" : "sad"}`}>
+      {gameWon ?
+        <p>
+          <strong>Congratulations!</strong> Got it in {" "}
+          <strong>{guessResults.length} guesses</strong>.
+        </p>
+        :
+        <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
+      }
+
     </div>
   );
 }

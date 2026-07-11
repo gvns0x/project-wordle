@@ -27,7 +27,7 @@ function Game() {
     <GuessResults guessResults={guessResults} answer={answer} />
     <Input updateResults={updateResults} />
     {gameEnded &&
-      <Banner/>}
+    <Banner guessResults={guessResults} answer={answer}/>}
   </>;
 }
 
