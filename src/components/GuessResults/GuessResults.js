@@ -2,7 +2,7 @@ import React from 'react';
 import Guess from '../Guess'
 import { NUM_OF_GUESSES_ALLOWED as numOfGuesses } from '../../constants'
 
-function GuessResults({ guessResults }) {
+function GuessResults({ guessResults, answer }) {
 
   // Creates an empty arrow with {numOfGuesses} number of rows
   const rowsSetup = Array.from({ length: numOfGuesses })
@@ -14,7 +14,7 @@ function GuessResults({ guessResults }) {
 
   return (
     <div className="guess-results">
-      {filledRows.map(guessResult => <Guess key={Math.random()} guessResult={guessResult} />)}
+      {filledRows.map(guessResult => <Guess answer={answer} key={Math.random()} guessResult={guessResult} />)}
     </div>
   );
 }
