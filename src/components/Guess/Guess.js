@@ -9,7 +9,7 @@ function Guess({ guessResult }) {
       [...guessResult].map(letter =>
         <span className="cell">{letter}</span>
       ) :
-      numOfCells.map(block => <span className='cell'></span>)
+      numOfCells.map(block => <span key={Math.random()} className='cell'></span>)
     }
   </p>;
 }
