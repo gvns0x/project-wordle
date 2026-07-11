@@ -1,14 +1,14 @@
 import React from 'react';
 import Guess from '../Guess'
+import numOfGuesses from '../../constants'
 
 function GuessResults({ guessResults }) {
+
+
+
   return (
     <div className="guess-results">
-      <Guess />
-      <Guess />
-      <Guess />
-      <Guess />
-      <Guess />
+      {guessResults.map(guessResult => <Guess guessResult={guessResult}/>)}
     </div>
   );
 }
