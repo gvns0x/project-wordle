@@ -1,4 +1,5 @@
 import React from 'react';
+import { checkGuess } from '../../game-helpers'
 
 function Guess({ guessResult }) {
 
