@@ -18,8 +18,7 @@ function Game() {
   console.log(`Answer is ${rightAnswer}`)
 
   function updateResults(input) {
-    const results = [...guessResults]
-    setGuessResults([...results, input])
+    setGuessResults(prev => [...prev, input])
   }
 
   function onRestart() {
