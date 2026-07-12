@@ -3,8 +3,10 @@ import { checkGuess } from '../../game-helpers'
 
 function Cell({ status, children }) {
 
+  const className = status ? `cell status` : `cell`
+
   return (
-    <span className={`cell ${status}`}>
+    <span className={className}>
       {children}
     </span>
   )
