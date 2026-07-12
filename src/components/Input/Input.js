@@ -5,7 +5,6 @@ function Input({ updateResults, gameEnded }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(input)
     updateResults(input);
     setInput('')
   }

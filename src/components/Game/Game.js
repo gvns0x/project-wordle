@@ -9,14 +9,13 @@ import { NUM_OF_GUESSES_ALLOWED as numOfGuesses } from '../../constants';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
 
 function Game() {
   const [guessResults, setGuessResults] = React.useState([])
   const [rightAnswer, setRightAnswer] = React.useState(answer)
-  console.info({rightAnswer})
-  const gameEnded = answer === guessResults[guessResults.length - 1] || guessResults.length === 6
+  const gameEnded = rightAnswer === guessResults[guessResults.length - 1] || guessResults.length === 6
+
+  console.log(`Answer is ${rightAnswer}`)
 
   function updateResults(input) {
     const results = [...guessResults]
@@ -25,15 +24,14 @@ function Game() {
 
   function onRestart() {
     setRightAnswer(sample(WORDS))
+    setGuessResults([])
   }
-  
-  console.log(`Game ended: ${gameEnded}`)
 
   return <>
-    <GuessResults {...{guessResults, answer}} />
+    <GuessResults {...{guessResults, rightAnswer}} />
     <Input {...{updateResults, gameEnded}} />
     {gameEnded &&
-    <Banner {...{guessResults, answer}} />}
+    <Banner {...{guessResults, rightAnswer, onRestart}} />}
   </>;
 }
 
