@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Banner({ guessResults, rightAnswer, onRestart, maxGuesses, gameStatus }) {
+function Banner({ guessResults, rightAnswer, onRestart, gameStatus }) {
 
   return (
     <div
