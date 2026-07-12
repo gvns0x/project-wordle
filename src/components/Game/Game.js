@@ -5,7 +5,7 @@ import { WORDS } from '../../data';
 import Input from '../Input'
 import GuessResults from '../GuessResults/';
 import Banner from '../Banner'
-import { NUM_OF_GUESSES_ALLOWED as numOfGuesses } from '../../constants';
+import { NUM_OF_GUESSES_ALLOWED as maxGuesses } from '../../constants';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -13,7 +13,7 @@ const answer = sample(WORDS);
 function Game() {
   const [guessResults, setGuessResults] = React.useState([])
   const [rightAnswer, setRightAnswer] = React.useState(answer)
-  const gameEnded = rightAnswer === guessResults[guessResults.length - 1] || guessResults.length === 6
+  const gameEnded = rightAnswer === guessResults[guessResults.length - 1] || guessResults.length === maxGuesses
 
   console.log(`Answer is ${rightAnswer}`)
 
