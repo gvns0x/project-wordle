@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Input({ updateResults, gameEnded }) {
+function Input({ updateResults, gameStatus }) {
   const [input, setInput] = React.useState('')
 
   function handleSubmit(event) {
@@ -18,7 +18,7 @@ function Input({ updateResults, gameEnded }) {
         onChange={(event) => setInput(event.target.value.toUpperCase())}
         value={input}
         pattern="[A-Z]{5}"
-        disabled={gameEnded ? true : false}
+        disabled={gameStatus !== 'running' ? true : false}
         />
     </form>
   )

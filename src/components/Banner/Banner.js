@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Banner({ guessResults, rightAnswer, onRestart, maxGuesses }) {
-  const gameWon = rightAnswer === guessResults[guessResults.length - 1] && guessResults.length <= maxGuesses
+function Banner({ guessResults, rightAnswer, onRestart, maxGuesses, gameStatus }) {
 
   return (
     <div
-      className={`banner ${gameWon ? "happy" : "sad"}`}
+      className={`banner ${gameStatus === 'won' ? "happy" : "sad"}`}
       style={{
         display: "flex",
         gap: "8px",
@@ -13,7 +12,7 @@ function Banner({ guessResults, rightAnswer, onRestart, maxGuesses }) {
         justifyContent: "space-between"
       }}
     >
-      {gameWon ?
+      {gameStatus === 'won' ?
         <p>
           <strong>Congratulations!</strong> Got it in {" "}
           <strong>{guessResults.length} guess{guessResults.length === 1 ? "" : "es"}</strong>.
