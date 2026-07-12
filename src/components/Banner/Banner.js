@@ -16,7 +16,7 @@ function Banner({ guessResults, rightAnswer, onRestart, maxGuesses }) {
       {gameWon ?
         <p>
           <strong>Congratulations!</strong> Got it in {" "}
-          <strong>{guessResults.length} guesses</strong>.
+          <strong>{guessResults.length} guess{guessResults.length === 1 ? "" : "es"}</strong>.
         </p>
         :
         <p>Sorry, the correct answer is <strong>{rightAnswer}</strong>.</p>
