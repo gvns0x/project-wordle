@@ -14,7 +14,7 @@ function GuessResults({ guessResults, rightAnswer }) {
 
   return (
     <div className="guess-results">
-      {filledRows.map(guessResult => <Guess rightAnswer={rightAnswer} key={Math.random()} guessResult={guessResult} />)}
+      {filledRows.map((guessResult, index) => <Guess rightAnswer={rightAnswer} key={index} guessResult={guessResult} />)}
     </div>
   );
 }
