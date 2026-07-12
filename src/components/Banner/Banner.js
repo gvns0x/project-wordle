@@ -24,7 +24,7 @@ function Banner({ guessResults, rightAnswer, onRestart, maxGuesses }) {
       <button
         onClick={onRestart}
         style={{
-          backgroundColor: "rgba(255,255,255,.2",
+          backgroundColor: "rgba(255,255,255,.2)",
           padding: "4px 12px",
           borderRadius: "12px"
         }}>
