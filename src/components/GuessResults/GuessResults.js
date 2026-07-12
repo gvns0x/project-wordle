@@ -1,15 +1,13 @@
 import React from 'react';
 import Guess from '../Guess'
-import { NUM_OF_GUESSES_ALLOWED as numOfGuesses } from '../../constants'
+import { NUM_OF_GUESSES_ALLOWED as maxGuesses } from '../../constants'
+import { range } from '../../utils'
 
 function GuessResults({ guessResults, rightAnswer }) {
 
-  // Creates an empty arrow with {numOfGuesses} number of rows
-  const rowsSetup = Array.from({ length: numOfGuesses })
-
   // Updated the correct row index with the equivalent one from guessResults
-  const filledRows = rowsSetup.map((row, index) =>
-    rowsSetup[index] = guessResults[index]
+  const filledRows = range(maxGuesses).map((row, index) =>
+    guessResults[index]
   )
 
   return (
