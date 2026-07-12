@@ -18,7 +18,10 @@ function Game() {
     
     setGuessResults(prev => [...prev, input])
 
+    // Using newGuessResults because setGuessResults 👆 will
+    // update async
     const newGuessResults = [...guessResults, input]
+
     if (newGuessResults.length >= maxGuesses) {
       setGameStatus('lost')
     } else if (rightAnswer === newGuessResults[newGuessResults.length - 1]) {
