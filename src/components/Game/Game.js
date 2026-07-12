@@ -6,7 +6,10 @@ import Input from '../Input'
 import GuessResults from '../GuessResults/';
 import Banner from '../Banner'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import { NUM_OF_GUESSES_ALLOWED as maxGuesses } from '../../constants';
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
