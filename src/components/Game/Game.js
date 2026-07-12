@@ -42,7 +42,6 @@ function Game() {
     <Input {...{updateResults, gameStatus}} />
     {gameStatus !== 'running' &&
     <Banner {...{guessResults, rightAnswer, onRestart, maxGuesses, gameStatus}} />}
-    {console.log(gameStatus !== 'running' ? "show banner" : "no banner")}
   </>;
 }
 
