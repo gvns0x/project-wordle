@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Banner({ guessResults, rightAnswer, onRestart }) {
-  const gameWon = rightAnswer === guessResults[guessResults.length - 1] && guessResults.length <= 6
+function Banner({ guessResults, rightAnswer, onRestart, maxGuesses }) {
+  const gameWon = rightAnswer === guessResults[guessResults.length - 1] && guessResults.length <= maxGuesses
 
   return (
     <div
