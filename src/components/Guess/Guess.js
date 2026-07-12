@@ -7,6 +7,9 @@ function Guess({ guessResult, rightAnswer }) {
 
   return <p className="guess">
     {guessResult ?
+    // checkGuess gives an array of the ltters that match the
+    // right letter, the ones that are misplaced, and the
+    // ones that are wrong
       checkGuess(guessResult, rightAnswer).map(letterObject =>
         <span key={Math.random()} className={`cell ${letterObject.status}`}>{letterObject.letter}</span>
       )
